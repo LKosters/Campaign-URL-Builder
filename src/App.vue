@@ -12,27 +12,32 @@
 
         <div class="form-campaign pt-10">
           <div class="pb-5">
-            <p class="text-white font-bold pb-2">Website URL</p>
+            <p class="text-white font-bold pb-2"><i style="color: #EC86FD;" class="fa-solid fa-link mr-2"></i> Website URL
+            </p>
             <input class="w-full" v-model="websiteURL" placeholder="Type here" type="text" />
           </div>
 
           <div class="pb-5">
-            <p class="text-white font-bold pb-2">Campaign ID</p>
+            <p class="text-white font-bold pb-2"><i style="color: #93E2FC;" class="fa-solid fa-hashtag mr-2"></i> Campaign
+              ID</p>
             <input class="w-full" v-model="campaignID" placeholder="Type here" type="text" />
           </div>
 
           <div class="pb-5">
-            <p class="text-white font-bold pb-2">Campaign Source</p>
+            <p class="text-white font-bold pb-2"><i style="color: #FFD863;" class="fa-solid fa-bookmark mr-2"></i>
+              Campaign Source</p>
             <input class="w-full" v-model="campaignSource" placeholder="Type here" type="text" />
           </div>
 
           <div class="pb-5">
-            <p class="text-white font-bold pb-2">Campaign Medium</p>
+            <p class="text-white font-bold pb-2"><i style="color: #FC95B1;" class="fa-solid fa-globe mr-2"></i> Campaign
+              Medium</p>
             <input class="w-full" v-model="campaignMedium" placeholder="Type here" type="text" />
           </div>
 
           <div class="pb-5">
-            <p class="text-white font-bold pb-2">Campaign Name</p>
+            <p class="text-white font-bold pb-2"><i style="color: #AFFF55;" class="fa-solid fa-signature mr-2"></i>
+              Campaign Name</p>
             <input class="w-full" v-model="campaignName" placeholder="Type here" type="text" />
           </div>
         </div>
