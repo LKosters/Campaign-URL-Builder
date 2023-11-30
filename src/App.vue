@@ -45,7 +45,7 @@
           <div>
             <p class="text-white font-bold mb-2">Campaign URL</p>
             <input class="w-full mb-5" v-model="campaignURL" type="text" readonly />
-            <button class="btn">Copy URL</button>
+            <button class="btn" @click="copyURL">Copy URL</button>
           </div>
         </div>
       </div>
@@ -58,13 +58,50 @@ export default {
   data() {
     return {
       websiteURL: '',
+      campaignID: '',
+      campaignSource: '',
+      campaignMedium: '',
+      campaignName: '',
       campaignURL: ''
     }
   },
   watch: {
-    websiteURL(campaignURL) {
-      this.campaignURL = campaignURL;
+    websiteURL() {
+      this.updateCampaignURL();
+    },
+    campaignID() {
+      this.updateCampaignURL();
+    },
+    campaignSource() {
+      this.updateCampaignURL();
+    },
+    campaignMedium() {
+      this.updateCampaignURL();
+    },
+    campaignName() {
+      this.updateCampaignURL();
     }
+  },
+  methods: {
+    updateCampaignURL() {
+      let url = this.websiteURL;
+      if (this.campaignSource) {
+        url += '?utm_source=' + this.campaignSource;
+      }
+      if (this.campaignMedium) {
+        url += '&utm_medium=' + this.campaignMedium;
+      }
+      if (this.campaignName) {
+        url += '&utm_campaign=' + this.campaignName;
+      }
+      if (this.campaignID) {
+        url += '&utm_term=' + this.campaignID;
+      }
+      this.campaignURL = url;
+    },
+    copyURL() {
+      navigator.clipboard.writeText(this.campaignURL);
+    },
   }
 }
 </script>
