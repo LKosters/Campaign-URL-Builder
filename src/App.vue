@@ -1,5 +1,5 @@
 <template>
-  <div class="custom-padding-regular">
+  <div style="padding-bottom: 0px !important;" class="custom-padding-regular">
     <h1 class="text-5xl text-white font-bold text-center">
       Campaign URL Builder
     </h1>
@@ -30,7 +30,7 @@
           </div>
 
           <div class="pb-5">
-            <p class="text-white font-bold pb-2"><i style="color: #FC95B1;" class="fa-solid fa-globe mr-2"></i> Campaign
+            <p class="text-white font-bold pb-2"><i style="color: #555253;" class="fa-solid fa-globe mr-2"></i> Campaign
               Medium</p>
             <input class="w-full" v-model="campaignMedium" placeholder="Type here" type="text" />
           </div>
