@@ -1,9 +1,10 @@
+<script setup>
+import Hero from './components/Hero.vue'
+import Footer from './components/Footer.vue'
+</script>
+
 <template>
-  <div style="padding-bottom: 0px !important;" class="custom-padding-regular">
-    <h1 class="text-5xl text-white font-bold text-center">
-      Campaign URL Builder
-    </h1>
-  </div>
+  <Hero />
 
   <div class="container custom-padding-regular">
     <div class="card p-10 flex flex-col lg:flex-row">
@@ -30,7 +31,7 @@
           </div>
 
           <div class="pb-5">
-            <p class="text-white font-bold pb-2"><i style="color: #555253;" class="fa-solid fa-globe mr-2"></i> Campaign
+            <p class="text-white font-bold pb-2"><i style="color: #FC91AE;" class="fa-solid fa-globe mr-2"></i> Campaign
               Medium</p>
             <input class="w-full" v-model="campaignMedium" placeholder="Type here" type="text" />
           </div>
@@ -56,6 +57,8 @@
       </div>
     </div>
   </div>
+
+  <Footer />
 </template>
 
 <script>
@@ -102,11 +105,18 @@ export default {
       if (this.campaignID) {
         url += '&utm_term=' + this.campaignID;
       }
-      this.campaignURL = url;
+      this.campaignURL = url.replace(/ /g, '+');
     },
     copyURL() {
       navigator.clipboard.writeText(this.campaignURL);
-    },
+      const button = document.querySelector('.btn');
+      button.textContent = 'Copied';
+
+      setTimeout(() => {
+        button.textContent = 'Copy URL';
+      }, 2000);
+    }
+
   }
 }
-</script>
+</script>                                                                                                                                                                      
