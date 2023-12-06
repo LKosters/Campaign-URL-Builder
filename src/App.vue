@@ -103,7 +103,7 @@ export default {
         url += '&utm_campaign=' + this.campaignName;
       }
       if (this.campaignID) {
-        url += '&utm_term=' + this.campaignID;
+        url += '&utm_id=' + this.campaignID;
       }
       this.campaignURL = url.replace(/ /g, '+');
     },
